@@ -13,19 +13,18 @@ to the FS API
 function makeEmpty(path)
   local h = fs.open(path, "w")
   h.close()
-  return "r"
 end
 
 function readLines(path, a, b)
 
   local data = {}
 
-  local f = fs.open(path, fs.exists(path) and "r" or makeEmpty(path))
+  local f = fs.open(path, "r")
 
   i = 1
 
   if b ~= nil then
-    for i = 1, b do
+    for i = 1, b-1 do
       f.readLine()
       i = i + 1
     end
