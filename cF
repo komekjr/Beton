@@ -1,8 +1,14 @@
+function makeEmpty(path)
+local h = fs.open(path, "w")
+h.close()
+return "r"
+end
+
 function readLine(path, a, b)
 
   local data = {}
 
-  local h = fs.open(path, fs.exists(path) and "r" or "w")
+  local h = fs.open(path, fs.exists(path) and "r" or makeEmpty(path))
 
   for i = 1, a do
     data[i] = h.readLine()
