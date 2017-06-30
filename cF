@@ -1,7 +1,7 @@
 function makeEmpty(path)
-local h = fs.open(path, "w")
-h.close()
-return "r"
+  local h = fs.open(path, "w")
+  h.close()
+  return "r"
 end
 
 function readLine(path, a, b)
@@ -9,6 +9,13 @@ function readLine(path, a, b)
   local data = {}
 
   local f = fs.open(path, fs.exists(path) and "r" or makeEmpty(path))
+
+  if b ~= nil then
+    for i = 1, b do
+      data[i] = f.readLine()
+      i = i + 1
+    end
+  end
 
   for i = 1, a do
     data[i] = f.readLine()
