@@ -10,7 +10,7 @@ Created in order to simplify and add functions
 to the FS API
 ]]--
 
-function makeEmpty(path)
+function mk(path)
 
   if not path then
     error("Missing: String path")
