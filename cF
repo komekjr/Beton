@@ -1,0 +1,16 @@
+function readLine(path, a, b)
+
+  local data = {}
+
+  local h = fs.open(path, fs.exists(path) and "r" or "w")
+
+  for i = 1, a do
+    data[i] = h.readLine()
+    i = i + 1
+  end
+
+  h.close()
+
+  return data
+
+end
