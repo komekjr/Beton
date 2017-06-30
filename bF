@@ -18,8 +18,13 @@ end
 function readLines(path, a, b)
 
   local data = {}
+  local f
 
-  local f = fs.open(path, "r")
+  if fs.exists(path) then
+    f = fs.open(path, "r")
+  else
+    return false
+  end
 
   i = 1
 
