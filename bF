@@ -11,11 +11,20 @@ to the FS API
 ]]--
 
 function makeEmpty(path)
+
+  if not path then
+    error("Missing: String path")
+  end
+
   local h = fs.open(path, "w")
   h.close()
 end
 
 function readLines(path, a, b)
+
+  if not path then
+    error("Missing: String path")
+  end
 
   local data = {}
   local f
