@@ -8,14 +8,14 @@ function readLine(path, a, b)
 
   local data = {}
 
-  local h = fs.open(path, fs.exists(path) and "r" or makeEmpty(path))
+  local f = fs.open(path, fs.exists(path) and "r" or makeEmpty(path))
 
   for i = 1, a do
-    data[i] = h.readLine()
+    data[i] = f.readLine()
     i = i + 1
   end
 
-  h.close()
+  f.close()
 
   return data
 
