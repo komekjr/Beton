@@ -7,11 +7,7 @@ File System API
 Created in Iceland on a Thursday the 29th of June 2017
 
 Created in order to simplify and add functions
-to the fs API
-
-Standardized Header Template
-Copyright (c) 2017
-By CaptainStandard (Tomas Rohatynski)
+to the FS API
 ]]--
 
 function makeEmpty(path)
