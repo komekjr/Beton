@@ -20,22 +20,35 @@ function makeEmpty(path)
   return "r"
 end
 
-function readLine(path, a, b)
+function readLines(path, a, b)
 
   local data = {}
 
   local f = fs.open(path, fs.exists(path) and "r" or makeEmpty(path))
 
+  i = 1
+
   if b ~= nil then
     for i = 1, b do
-      data[i] = f.readLine()
+      f.readLine()
       i = i + 1
     end
   end
 
-  for i = 1, a do
-    data[i] = f.readLine()
-    i = i + 1
+  if a ~= nil then
+    for i = 1, a do
+      data[i] = f.readLine()
+      i = i + 1
+    end
+  else
+    i = 1
+    while true do
+      data[i] = f.readLine()
+      if data[i] == nil then
+        break
+      end
+      i = i + 1
+    end
   end
 
   f.close()
