@@ -13,7 +13,7 @@ to the FS API
 function makeFile(path)
 
   if not path then
-    error("Beton.api/bF 19 makeFile missing_string_path", 0) -- LULZ 0 makes the bF:16 when displaying errors dissapear
+    error("Beton.api/bF 19 makeFile missing_string_path", 0) -- LULZ 0 makes the bF:16 when displaying errors dissapear which is great cuz' I can specify the error line myself.
   end
 
   local h = fs.open(path, "w")
