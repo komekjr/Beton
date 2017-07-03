@@ -10,3 +10,29 @@ Created in Sweden on a Monday the 3rd of July 2017
 Created in order to simplify downloading
 of GitHub Repositories in ComputerCraft
 ]]--
+
+local tArgs = { ... }
+
+if not tArgs[1] then
+  error("Beton/bD 20 bD missing_string_path", 0)
+end
+
+local link = "https://raw.githubusercontent.com/" .. tArgs[1]
+
+local index = http.get(link .. "/master/index.dl")
+
+local branch = index.readLine()
+
+i = 1
+
+while true do
+  local tDir = index.readLine()
+
+  if not tDir then
+    return
+  end
+
+  h = fs.open(tDir, "w")
+  h.writeLine(index.readLine())
+  h.close()
+end

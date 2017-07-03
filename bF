@@ -11,6 +11,12 @@ Created in order to simplify and add functions
 to the FS API
 ]]--
 
+-- Usage can be retrieved with bF.usage
+
+print("makeFile(string path) - Makes an empty file in path", " : ",
+"readLines(string path, number lines_to_read, number begin_at_line) returns values amount_of_lines"
+)
+
 function makeFile(path)
 
   if not path then
@@ -63,6 +69,6 @@ function readLines(path, a, b)
 
   f.close()
 
-  return data
+  return data, i
 
 end
