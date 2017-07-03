@@ -1,0 +1,12 @@
+--[[
+Published under the MIT License
+Copyright (c) 2017
+By CaptainStandard (Tomas Rohatynski)
+
+betonDownload
+File Downloading API
+Created in Sweden on a Monday the 3rd of July 2017
+
+Created in order to simplify downloading
+of GitHub Repositories in ComputerCraft
+]]--
